@@ -1,4 +1,5 @@
-<ng-container *ngIf="products.length !=0">
+<ng-container *ngIf="productList.length !=0">
+    <h5 class="card-title">Estoque de produtos</h5>
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
@@ -8,51 +9,72 @@
                             <th>Nº</th>
                             <th>Nome do Produto</th>
                             <th>Imagem do Produto</th>
-                            <th>Descrição</th>
-                            <th>Preço</th>
-                            <th>Quantidade</th>
-                            <th>Total</th>
-                            <th>Ação</th>
+                            <th>Valor do produto</th>
+                            <th>Estoque Moda</th>
+                            <th>Estoque Eletronicos</th>
+                            <th>Estoque Joias</th>
+                            <th> </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of products; let i = index">
+                        <tr *ngFor="let item of productList; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{item.title}}</td>
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
-                            <td style="width: 25%;">{{item.description}}</td>
-                            <th style="width: 12%;">{{item.price}}</th>
-                            <td style="width: 12%;">{{item.quantity}}</td>
-                            <td style="width: 12%;">{{item.total}}</td>
-                            <td>
-                                <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                            </td>
+                            <td style="width: 25%;">{{item.total}}</td>
+                            <td style="width: 25%;">{{countFashion}}</td>
+                            <th style="width: 25%;">{{countEletronics}}</th>
+                            <td style="width: 25%;">{{countJewelery}}</td>
+                            <td> </td>               
+                            
                         </tr>
                         <tr>
-                            <td colspan="4"></td>
-                            <td><button (click)="emptycart()" class="btn btn-danger btnCarrinho">Carrinho Vazio</button></td>
-                            <td><button routerLink="/products" class="btn btn-primary btnCarrinho">Comprar mais</button></td>
-                            <td><button class="btn btn-success btnCarrinho">Finalizar Compra</button></td>
+                            <td colspan="3"></td>
+                            <td></td>
+                            <td><button routerLink="/products" class="btn btn-primary">Home</button></td>
+                            <td></td>
                             <td><strong>Total geral : ${{grandTotal}}</strong></td>
                         </tr>
                     </tbody>
                 </table>
+                
             </div>
         </div>
     </div>
+    
 </ng-container>
 
-
-<ng-container *ngIf="products.length ==0">
+<!--
+<ng-container *ngIf="productList.length !=0">
     <div class="container">
         <div class="stock">
             <h5 class="card-title">Estoque de produtos</h5>
         </div>
+        <div>
+            
+        </div>
         <div class="center">
-            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
-            <h4>Seu carrinho está vazio!</h4>
-            <h6>Adicione um item agora</h6>
-            <button routerLink="/products" class="btn btn-primary">Comprar agora</button>
+            <h4>Estoque atual!</h4>
+            <h6>produtos</h6>
+            <button routerLink="/products" class="btn btn-primary">Home</button>
         </div>
     </div>
 </ng-container>
+
+<!--
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Preço:</strong> ${{item.price}}</p>
+                
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+-->
