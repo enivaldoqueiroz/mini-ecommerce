@@ -1,15 +1,13 @@
 # mini-ecommerce
 Projeto mini e-commerce implementado em angular.
 
-Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist /`.
+## Instalar o node_module angular
 
-## Executando testes de unidade
+Execute `npm i` ou 'npm install @angular/cli' para construir o projeto.
 
-Execute `ng test` para executar os testes de unidade via [Karma] (https://karma-runner.github.io).
+## Executando projeto
 
-## Executando testes ponta a ponta
-
-Execute `ng e2e` para executar os testes ponta a ponta através de uma plataforma de sua escolha. Para usar este comando, você precisa primeiro adicionar um pacote que implemente recursos de teste ponta a ponta.
+Execute `npm start` ou 'ng serve' para executar o projeto.
 
 ## Ajuda adicional
 
